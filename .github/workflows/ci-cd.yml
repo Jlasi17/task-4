@@ -55,15 +55,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Step 8️⃣ - Build and Push Backend Docker image
+      # Build and Push Backend Docker image
       - name: Build and Push Backend Docker image
         run: |
-          cd task-1
-          docker build -t lasi116/task-backend:latest .
+          docker build -t lasi116/task-backend:latest ./task-1
           docker push lasi116/task-backend:latest
 
-      # Step 9️⃣ - Build and Push Frontend Docker image
+      # Build and Push Frontend Docker image
       - name: Build and Push Frontend Docker image
         run: |
-          cd task-3
-          docker build -t lasi116/task-frontend:latest .
+          docker build -t lasi116/task-frontend:latest ./task-3
           docker push lasi116/task-frontend:latest
